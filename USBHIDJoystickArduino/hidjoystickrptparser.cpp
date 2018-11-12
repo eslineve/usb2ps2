@@ -101,12 +101,9 @@ void JoystickEvents::OnGamePadChanged(const GamePadEventData *evt,uint8_t hat,ui
             b = b^reverse(hat, 0, 0);
        }
         Serial.write(b);
-        
-        
 
-        Serial.write(evt->Z1);
-        Serial.write(evt->Z2);
         Serial.write(evt->X);
         Serial.write(evt->Y);
-          //PrintHex<uint8_t > (evt->Rz, 0x80);
+        Serial.write(evt->Z1);
+        Serial.write(evt->Z2);
 }
