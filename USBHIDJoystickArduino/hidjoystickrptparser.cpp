@@ -1,6 +1,9 @@
 #include "hidjoystickrptparser.h"
 #include <util/crc16.h>
 
+uint8_t a;
+uint8_t b;
+
 JoystickReportParser::JoystickReportParser(JoystickEvents *evt) :
 joyEvents(evt),
 oldHat(0xDE),
@@ -48,36 +51,7 @@ void JoystickReportParser::Parse(USBHID *hid, bool is_rpt_id, uint8_t len, uint8
                 for (uint8_t i = 0; i < RPT_GEMEPAD_LEN; i++) oldPad[i] = buf[i];
         }
 
-        
 
-//        // Calling Hat Switch event handler
-//        if (hat != oldHat && joyEvents) {
-//                joyEvents->OnHatSwitch(hat);
-//                oldHat = hat;
-//        }
-//
-//        uint16_t buttons = (0x0000 | buf[6]);
-//        buttons <<= 4;
-//        buttons |= (buf[5] >> 4);
-//        uint16_t changes = (buttons ^ oldButtons);
-//
-//        // Calling Button Event Handler for every button changed
-//        if (changes) {
-//                for (uint8_t i = 0; i < 0x0C; i++) {
-//                        uint16_t mask = (0x0001 << i);
-//
-//                        if (((mask & changes) > 0) && joyEvents) {
-//                                if ((buttons & mask) > 0)
-//                                        
-//                                else
-//                                        
-//                        }
-//                }
-//                oldButtons = buttons;
-//        }
-//}
-uint8_t a;
-uint8_t b;
 void JoystickEvents::OnGamePadChanged(const GamePadEventData *evt,uint8_t hat,uint8_t but) {
         Serial.write(0x5A);
         if(evt->Rz != 0x08){

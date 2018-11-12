@@ -292,7 +292,7 @@ int main(void)
 			}
 			
 			/*
-				Handle USB controller updates
+				Handle UART controller updates
 			*/
 			{
 				/* Enable interrupts */
@@ -308,10 +308,11 @@ int main(void)
 					
 					if (tmp != -1)
 					{
-            char str[10];
-            int tmpint = tmp;
-            sprintf(str,"%02hhX, ", tmp);
-            usb_serial_write(str, 10);
+                        /*start usb debug*/
+						char str[10];
+						int tmpint = tmp;
+						sprintf(str,"%02hhX, ", tmp);
+						usb_serial_write(str, 10);
             
 						switch (sequence)
 						{
@@ -377,7 +378,8 @@ int main(void)
 								controller.pressure[PRESSURE_R2]       = (controller.buttons[1] & BUTTON_R2)       ? 0x00 : 0xFF;
 								
 								sequence = 0;
-                usb_serial_putchar('\n');
+                                /*end usb debug*/
+                                usb_serial_putchar('\n');
 								break;
 							}
 						}
