@@ -1,13 +1,3 @@
-/*
- *  PS2 Controller Emulator v1.0 for Teensy 2.0
- *
- *  Copyright © 2015 Aaron Clovsky <pelvicthrustman@gmail.com>
- *Arduino: 1.8.5 (Mac OS X), TD: 1.44, Board: "Arduino/Genuino Zero (Native USB Port)"
- *  Based on work by Johnny Chung Lee <http://procrastineering.blogspot.com/>
- *
- *  This software is free and is provided "as is" without any express or implied warranty
- */	
- 
 /*******************************************************************************
  Headers
 *******************************************************************************/
