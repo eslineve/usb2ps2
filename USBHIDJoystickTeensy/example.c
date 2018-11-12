@@ -4,8 +4,8 @@
 #include <avr/io.h>        /* Device-specific I/O */
 #include <avr/interrupt.h> /* Enable/Disable interrupts */
 #include <util/delay.h>    /* Time delay functions */
-#include "uart.h"
-#include "usb_serial.h"/* USB serial support */
+#include "uart.h"          /* UART support*/
+#include "usb_serial.h"    /* USB serial support */
 
 /*******************************************************************************
  Configure hardware
